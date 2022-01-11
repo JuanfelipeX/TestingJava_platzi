@@ -70,4 +70,7 @@ public class MovieServiceTest {
     private List<Integer> getMoviesIds(Collection<Movie> movies) {
          return movies.stream().map(Movie::getId).collect(Collectors.toList());
     }
+
+
+
 }
