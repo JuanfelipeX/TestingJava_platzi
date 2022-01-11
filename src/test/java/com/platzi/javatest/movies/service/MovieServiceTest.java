@@ -6,6 +6,8 @@ import com.platzi.javatest.movies.model.Movie;
 import org.hamcrest.CoreMatchers;
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.Mockito;
 
 import java.util.Arrays;
@@ -19,7 +21,13 @@ import static org.junit.Assert.*;
 
 public class MovieServiceTest {
 
-    private MovieService movieService;
+
+    @InjectMocks
+    MovieService movieService;
+
+    @Mock
+    MovieRepository movieRepository;
+
 
     @Before
     public void setUp() throws Exception {
@@ -60,7 +68,6 @@ public class MovieServiceTest {
     }
 
     private List<Integer> getMoviesIds(Collection<Movie> movies) {
-        List<Integer> moviesId =  movies.stream().map(movie -> movie.getId()).collect((Collectors.toList()));
-        return moviesId;
+         return movies.stream().map(Movie::getId).collect(Collectors.toList());
     }
 }
