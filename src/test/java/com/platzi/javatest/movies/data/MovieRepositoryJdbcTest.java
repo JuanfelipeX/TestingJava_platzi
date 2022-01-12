@@ -64,6 +64,7 @@ public class MovieRepositoryJdbcTest {
         // Remove H2 files -- https://stackoverflow.com/a/51809831/1121497
         final Statement s = dataSource.getConnection().createStatement();
         s.execute("drop all objects delete files"); // "shutdown" is also enough for mem db
-
     }
+
+
 }

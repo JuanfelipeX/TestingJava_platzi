@@ -26,4 +26,8 @@ public class MovieService { //la parte de negocio
     public Collection<Movie> findMovieByName(String name) {
         return movieRepository.findAll().stream().filter(movie -> movie.getName() == name).collect(Collectors.toList());
     }
+
+    public Collection<Movie> findMoviesByName(String name){
+        return movieRepository.findAll().stream().filter(movie -> movie.getName().toLowerCase().contains(name)).collect(Collectors.toList());
+    }
 }

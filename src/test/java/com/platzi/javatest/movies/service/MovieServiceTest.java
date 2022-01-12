@@ -60,11 +60,14 @@ public class MovieServiceTest {
     }
 
     @Test
-    public void return_movie_by_name_or_keyword()
-    {
+    public void return_movie_by_name_or_keyword(){
         Collection<Movie> movies = movieService.findMovieByName("Super 8");
-
         assertThat(getMoviesIds(movies), CoreMatchers.is(Arrays.asList(4)));
+    }
+
+    public void return_movie_by_name(){
+        Collection<Movie> movies = movieService.findMoviesByName("matrix");
+        assertThat(getMoviesIds(movies), is(Arrays.asList(7, 9, 10)));
     }
 
     private List<Integer> getMoviesIds(Collection<Movie> movies) {
