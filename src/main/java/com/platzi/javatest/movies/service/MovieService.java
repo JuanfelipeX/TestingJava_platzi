@@ -21,11 +21,9 @@ public class MovieService { //la parte de negocio
 
     public Collection<Movie> findMovieByLength(int lenght) {
         return movieRepository.findAll().stream().filter(movie -> movie.getMinutes() <= lenght).collect(Collectors.toList());
-
     }
 
     public Collection<Movie> findMovieByName(String name) {
         return movieRepository.findAll().stream().filter(movie -> movie.getName() == name).collect(Collectors.toList());
-
     }
 }

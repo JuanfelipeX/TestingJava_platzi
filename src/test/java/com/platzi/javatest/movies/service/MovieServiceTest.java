@@ -71,6 +71,4 @@ public class MovieServiceTest {
          return movies.stream().map(Movie::getId).collect(Collectors.toList());
     }
 
-
-
 }
